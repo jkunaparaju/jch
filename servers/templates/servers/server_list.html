@@ -1,0 +1,16 @@
+<h1 xmlns="http://www.w3.org/1999/html">Servers</h1>
+<ul>
+    {% for server in object_list %}
+    <li>
+        <table>
+        <tr>Name : {{ server.name }}</tr>
+
+        <tr>Member Name  {{ server.mem}}</tr>
+        <tr><a href="{% url "server_edit" server.id %}">{{ server.ip }}</a></tr>
+        <tr></tr><a href="{% url "server_delete" server.id %}">delete</a></tr>
+    </table>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url "server_new" %}">New</a>

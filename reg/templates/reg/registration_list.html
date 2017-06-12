@@ -1,0 +1,17 @@
+<h1>Registered members </h1>
+<ul  style="list-style: none;">
+    {% for reg in object_list %}
+    <table>
+         <tr>
+    <li>
+        <td>{{ reg.first_name }}.{{ reg.last_name }} :</td>
+        <td> <a href="{% url "registration_edit" reg.registrationnumber %}">{{ reg.registrationnumber }}</a></td>
+        <td><a href="{% url "registration_delete" reg.registrationnumber %}">delete</a></td>
+
+    </li>
+            </tr>
+    </table>
+    {% endfor %}
+</ul>
+
+<a href="{% url "registration_new" %}">New</a>
